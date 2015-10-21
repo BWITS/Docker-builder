@@ -1,9 +1,5 @@
 FROM alpine:3.2
 
-ENV http_proxy http://147.10.7.97:3128
-ENV https_proxy http://147.10.7.97:3128
-ENV ftp_proxy http://147.10.7.97:3128
-
 RUN apk --update add go git alpine-sdk bzr mercurial bash
 ENV GOPATH /go
 ENV PATH /go/bin:$PATH
