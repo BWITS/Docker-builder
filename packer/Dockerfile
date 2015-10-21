@@ -8,6 +8,7 @@ RUN go get -u github.com/mitchellh/packer
 RUN cd $GOPATH/src/github.com/mitchellh/packer && \
     git stash && \
     make updatedeps
+RUN apk add bash
 RUN cd $GOPATH/src/github.com/mitchellh/packer && make
 RUN go test ./... 
 CMD ["go","run","main.go"]
