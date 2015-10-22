@@ -1,10 +1,15 @@
-FROM alpine:3.2
+FROM golang
 
-RUN apk --update add go git alpine-sdk bzr mercurial bash
+ENV http_proxy http://147.10.7.97:3128
+ENV https_proxy http://147.10.7.97:3128
+ENV ftp_proxy http://147.10.7.97:3128
+
+RUN apt-get install git bzr mercurial
 ENV GOPATH /go
 ENV PATH /go/bin:$PATH
 
 RUN go get -u github.com/mitchellh/packer
+
 WORKDIR $GOPATH/src/github.com/mitchellh/packer
 RUN git stash && \
     make updatedeps
