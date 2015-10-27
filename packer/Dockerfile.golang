@@ -1,9 +1,5 @@
 FROM golang
 
-ENV http_proxy http://147.10.7.97:3128
-ENV https_proxy http://147.10.7.97:3128
-ENV ftp_proxy http://147.10.7.97:3128
-
 RUN apt-get install git bzr mercurial
 ENV GOPATH /go
 ENV PATH /go/bin:$PATH
