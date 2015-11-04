@@ -6,7 +6,8 @@ Packer source code can be found at https://github.com/mitchellh/packer, easily b
 Notes: The packer built in alpine linux can be run in Mac OS directly.
 
 ```
-docker build -f Dockerfile.alpine -t packer:alpine .
+cd alpine
+docker build -t packer:alpine .
 docker run -d packer:alpine bash
 
 # Copy the compiled packer to your local disk.
@@ -15,10 +16,10 @@ docker cp <CONTAINER_ID>:/go/src/github.com/mitchellh/packer/bin .
 ### Build packer in Debian linux (the official golang docker image)
 
 ```
-docker build -f Dockerfile.golang -t packer:golang . 
+cd debian
+docker build -t packer:golang . 
 docker run -d packer:golang bash
 docker cp <CONTAINER_ID>:/go/src/github.com/mitchellh/packer/bin .
 ```
 
 Now you have packer and its plugins compiled from source code in your local disk.
-
