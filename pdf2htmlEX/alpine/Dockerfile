@@ -32,7 +32,7 @@ RUN apk --update add alpine-sdk xz poppler-dev pango-dev m4 libtool perl autocon
     export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig && \
     cmake . && make && sudo make install && \
     apk del alpine-sdk xz poppler-dev pango-dev m4 libtool perl autoconf automake coreutils python-dev zlib-dev freetype-dev glib-dev cmake && \
-    apk add libpng python freetype glib libintl libxml2 libltdl cairo && \
+    apk add libpng python freetype glib libintl libxml2 libltdl cairo poppler pango && \
     rm -rf /var/lib/apt/lists/* && \
     rm /var/cache/apk/* && \
     rm -rf /fontforge /libspiro /libuninameslist /pdf2htmlEX
