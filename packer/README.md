@@ -23,3 +23,5 @@ docker cp <CONTAINER_ID>:/go/src/github.com/mitchellh/packer/bin .
 ```
 
 Now you have packer and its plugins compiled from source code in your local disk.
+
+### Recommand to add --no-cache option when do the building, you will get the latest packer always.
