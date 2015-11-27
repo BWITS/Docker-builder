@@ -1,5 +1,7 @@
 ## Convert html file to plain text file and run html2txt as local command
 
+[![](https://badge.imagelayers.io/bwits/html2txt:latest.svg)](https://imagelayers.io/?images=bwits/html2txt:latest 'Get your own badge on imagelayers.io')
+
 suppose the html file `test.html` is at your current folder
 
 ```
