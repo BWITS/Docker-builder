@@ -1,5 +1,5 @@
 # Convert html file to plain text file and run html2txt as local command
-# support the html file `test.html` is at your current folder
+# suppose the html file `test.html` is at your current folder
 #
 # docker pull bwits/html2txt
 # alias html2txt="docker run -ti --rm -v $(pwd):/app bwits/html2txt"
