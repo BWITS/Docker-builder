@@ -1,4 +1,4 @@
-## convert html file to plain text file
+## Convert html file to plain text file and run html2txt as local command
 
 support the html file `test.html` is at your current folder
 
