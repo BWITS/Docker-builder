@@ -8,7 +8,7 @@ $ docker pull bwits/pdf2txt
 $ alias pdf2txt="docker run -ti --rm -v ~/app:/app pdf2txt"
 $ pdf2txt sample.pdf > sample.txt
 ```
-You will get the txt file named `sample.txt` in ~/app folder.
+You will get the txt file named `sample.txt` in current folder.
 
 2, You can directly run below command to convert the pdf file in current foler.
 ```
