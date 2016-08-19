@@ -2,7 +2,7 @@ FROM alpine:3.2
 
 ENV REFRESHED_AT 20151104
 
-RUN apk --update add alpine-sdk xz poppler-dev pango-dev m4 libtool perl autoconf automake coreutils python-dev zlib-dev freetype-dev glib-dev cmake && \
+RUN apk --update add alpine-sdk xz poppler-dev pango-dev m4 libtool perl autoconf automake coreutils python-dev zlib-dev freetype-dev glib-dev cmake pango && \
     cd / && \
     git clone https://github.com/fontforge/libspiro.git && \
     cd libspiro && \
