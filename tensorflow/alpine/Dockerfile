@@ -1,4 +1,4 @@
-FROM alpine:3.2
+FROM alpine:3.4
 
 # Here we use several hacks collected from https://github.com/gliderlabs/docker-alpine/issues/11:
 # 1. install GLibc (which is not the cleanest solution at all)
@@ -6,12 +6,13 @@ FROM alpine:3.2
 
 # Install glibc
 RUN apk add --update wget ca-certificates && \
-    export ALPINE_GLIBC_BASE_URL="https://circle-artifacts.com/gh/andyshinn/alpine-pkg-glibc/6/artifacts/0/home/ubuntu/alpine-pkg-glibc/packages/x86_64" && \
-    export ALPINE_GLIBC_PACKAGE="glibc-2.21-r2.apk" && \
-    export ALPINE_GLIBC_BIN_PACKAGE="glibc-bin-2.21-r2.apk" && \
+    export ALPINE_GLIBC_VERSION=2.23-r3 && \
+    export ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${ALPINE_GLIBC_VERSION}" && \
+    export ALPINE_GLIBC_PACKAGE="glibc-${ALPINE_GLIBC_VERSION}.apk" && \
+    export ALPINE_GLIBC_BIN_PACKAGE="glibc-bin-${ALPINE_GLIBC_VERSION}.apk" && \
     wget "$ALPINE_GLIBC_BASE_URL/$ALPINE_GLIBC_PACKAGE" "$ALPINE_GLIBC_BASE_URL/$ALPINE_GLIBC_BIN_PACKAGE" && \
     apk add --allow-untrusted "$ALPINE_GLIBC_PACKAGE" "$ALPINE_GLIBC_BIN_PACKAGE" && \
-    /usr/glibc/usr/bin/ldconfig "/lib" "/usr/glibc/usr/lib" && \
+    /sbin/ldconfig "/lib" "/usr/glibc-compat/lib/" && \
     echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf && \
     apk del wget ca-certificates && \
     rm "$ALPINE_GLIBC_PACKAGE" "$ALPINE_GLIBC_BIN_PACKAGE" /var/cache/apk/*
