@@ -28,6 +28,8 @@ Get image:     docker pull bwits/fontforge-the-builder
 
 README: https://github.com/BWITS/Docker-builder/blob/master/fontforge/alpine/README.md
 
+[![DockerHub Badge](http://dockeri.co/image/bwits/fontforge-the-builder)](https://hub.docker.com/r/bwits/fontforge-the-builder/)
+
 ### pdf2htmlEX
 Source code:   https://github.com/coolwanglu/pdf2htmlEX
 
