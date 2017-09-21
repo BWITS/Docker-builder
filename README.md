@@ -36,3 +36,6 @@ Docker image:  https://hub.docker.com/r/bwits/pdf2htmlex-alpine/
 Get image:     docker pull bwits/pdf2htmlex-alpine
 
 README:  https://github.com/BWITS/Docker-builder/blob/master/pdf2htmlEX/alpine/README.md
+
+[![DockerHub Badge](http://dockeri.co/image/bwits/pdf2htmlex-alpine)](https://hub.docker.com/r/bwits/pdf2htmlex-alpine/)
+
